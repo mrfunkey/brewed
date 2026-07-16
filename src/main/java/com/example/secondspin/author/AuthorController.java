@@ -3,6 +3,8 @@ package com.example.secondspin.author;
 import com.example.secondspin.post.Post;
 import com.example.secondspin.post.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,8 +23,9 @@ public class AuthorController {
     }
 
     @GetMapping("/{id}")
-    public Author getAuthorById(@PathVariable Long id) {
-        return authorService.getAuthorById(id);
+    public ResponseEntity<Author> getAuthorById(@PathVariable Long id) {
+        Author author = authorService.getAuthorById(id);
+        return author != null ? ResponseEntity.ok(author) : ResponseEntity.notFound().build();
     }
 
     @GetMapping("/email")
@@ -35,10 +38,8 @@ public class AuthorController {
         return postService.getAuthorPosts(id);
     }
 
-
-
-    @PostMapping()
-    public void createAuthor(@RequestBody Author author) {
-        authorService.createAuthor(author);
+    @PostMapping
+    public ResponseEntity<Author> createAuthor(@RequestBody Author author) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(authorService.createAuthor(author));
     }
 }

@@ -29,7 +29,7 @@ public class Post {
 
     private int dislikes;
 
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Author author;

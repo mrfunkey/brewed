@@ -16,14 +16,14 @@ public class AuthorService {
     }
 
     public Author getAuthorById(long id) {
-        return authorRepository.findById(id).get();
+        return authorRepository.findById(id).orElse(null);
     }
 
     public Author getAuthorByEmail(String email) {
-        return authorRepository.findByEmail(email).get();
+        return authorRepository.findByEmail(email).orElse(null);
     }
 
-    public void createAuthor(Author author) {
-        authorRepository.save(author);
+    public Author createAuthor(Author author) {
+        return authorRepository.save(author);
     }
 }

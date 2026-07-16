@@ -1,5 +1,7 @@
 package com.example.secondspin.post;
 
+import com.example.secondspin.author.Author;
+import com.example.secondspin.author.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +12,12 @@ import java.util.List;
 public class PostService {
     @Autowired
     private PostRepository postRepository;
+    @Autowired
+    private AuthorRepository authorRepository;
+
+    public List<Post> getPosts(){
+        return postRepository.findAll();
+    }
 
     public List<Post> getRecentPosts(int days) {
         LocalDateTime cutoff = LocalDateTime.now().minusDays(days);
@@ -19,4 +27,21 @@ public class PostService {
     public List<Post> getAuthorPosts(Long id) {
         return postRepository.findByAuthorId(id);
     }
+
+    public Post getPostById(long id) {
+        return postRepository.findById(id).orElse(null);
+    }
+
+    public Post createPost(Post post) {
+        if (post.getAuthor() == null) {
+            return null;
+        }
+        Author author = authorRepository.findById(post.getAuthor().getId()).orElse(null);
+        if (author == null) {
+            return null;
+        }
+        post.setAuthor(author);
+        return postRepository.save(post);
+    }
+
 }
