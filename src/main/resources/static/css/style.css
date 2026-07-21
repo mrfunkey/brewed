@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    user-select:none;
+}
+
+.nav-bar{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    user-select:none;
+    margin-bottom: 20px;
+}
+
+.nav-button {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    padding: 14px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.post-list {
+    display: block;
+    margin: 0 auto;
+    text-align: left;
+    max-width: 500px;
+}
+
+.post {
+    display: block;
+    padding: 10px;
+    outline: black solid 2px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    user-select: none;
+}
