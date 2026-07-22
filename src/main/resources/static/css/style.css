@@ -13,6 +13,7 @@ body {
     text-align: center;
     padding: 10px;
     user-select:none;
+    font-size: 40px;
 }
 
 .nav-bar{
@@ -40,16 +41,16 @@ body {
     max-width: 500px;
 }
 
-.post {
+.post-card, .post-detail-card {
     display: block;
-    padding-top:6px;
-    padding-bottom:6px;
-    padding-left:10px;
-    padding-right:10px;
     outline: black solid 2px;
     border-radius: 12px;
     margin-bottom: 10px;
     user-select: none;
+}
+
+.post-detail-card {
+    padding: 6px 10px;
 }
 
 .post-title{
@@ -60,14 +61,32 @@ body {
     margin-top: 4px;
 }
 
-.post-data {
+.post-meta {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-top: 50px;
 }
-.post-data span:nth-child(1) {text-align: left}
-.post-data span:nth-child(2) {text-align: right}
+.post-meta span:nth-child(1) {text-align: left}
+.post-meta span:nth-child(2) {text-align: right}
 
 .post-link {
+    display: block;
+    padding: 6px 10px;
     text-decoration: none;
     color: inherit;
+}
+.post-link:hover {
+    background-color: #ededed;
+}
+
+.post-detail {
+    display: block;
+    margin: 0 auto;
+    text-align: left;
+    max-width: 800px;
+}
+
+.post-content {
+    margin-top: 50px;
+    white-space: pre-line;
 }

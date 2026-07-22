@@ -1,22 +1,21 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
-fetch("/posts/${id}")
+fetch(`/posts/${id}`)
     .then((res) => res.json())
-    .then(data => {
-        const container = document.getElementById("post-content");
+    .then(post => {
+        const container = document.getElementById("post-detail");
         const postElement = document.createElement("div");
-        postElement.classList.add("post");
+        postElement.classList.add("post-detail-card");
         postElement.innerHTML = `
-            <a href="post.html?id=${post.id}">
-                <h2 class="post-title">${post.title}</h2>
-                <p class="post-author">${post.author.fullName}</p>
-                <p>${post.description}</p>
-                <div class="post-data">
-                    <span>${new Date(post.createdAt).toLocaleDateString()}</span>
-                    <span>${post.likes} ${pluralize(post.likes, "like")}</span>
-                </div>
-            </a>
+            <h2 class="post-title">${post.title}</h2>
+            <p class="post-author">${post.author.fullName}</p>
+            <span class="post-content">${post.content}</span>
+            <div class="post-meta">
+                <span>${new Date(post.createdAt).toLocaleDateString()}</span>
+                <span>${post.likes} ${pluralize(post.likes, "like")}</span>
+            </div>
+            
         `;
         container.appendChild(postElement);
     })

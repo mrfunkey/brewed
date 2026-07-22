@@ -19,7 +19,7 @@ public class Post {
     @Column(nullable = false, length = 250)
     private String description;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String content;
 
     @Column(name = "header_img")
