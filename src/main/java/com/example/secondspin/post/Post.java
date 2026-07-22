@@ -33,4 +33,5 @@ public class Post {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Author author;
+
 }

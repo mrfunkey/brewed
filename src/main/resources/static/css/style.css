@@ -4,6 +4,7 @@
 
 body {
     margin: 0;
+    font-family: "Alan Sans", sans-serif;
 }
 
 .logo {
@@ -41,9 +42,32 @@ body {
 
 .post {
     display: block;
-    padding: 10px;
+    padding-top:6px;
+    padding-bottom:6px;
+    padding-left:10px;
+    padding-right:10px;
     outline: black solid 2px;
     border-radius: 12px;
     margin-bottom: 10px;
     user-select: none;
+}
+
+.post-title{
+    margin-bottom: 0px;
+}
+
+.post-author{
+    margin-top: 4px;
+}
+
+.post-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.post-data span:nth-child(1) {text-align: left}
+.post-data span:nth-child(2) {text-align: right}
+
+.post-link {
+    text-decoration: none;
+    color: inherit;
 }

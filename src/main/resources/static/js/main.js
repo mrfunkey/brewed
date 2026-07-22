@@ -6,10 +6,20 @@ fetch("/dashboard/recent-posts?days=30")
             const postElement = document.createElement("div");
             postElement.classList.add("post");
             postElement.innerHTML = `
-                <h2>${post.title}</h2>
-                <p>${post.description}</p>
-                <p>${post.author.fullName}</p>
-                 `;
+                <a class="post-link" href="post.html?id=${post.id}">
+                    <h2 class="post-title">${post.title}</h2>
+                    <p class="post-author">${post.author.fullName}</p>
+                    <p>${post.description}</p>
+                    <div class="post-data">
+                        <span>${new Date(post.createdAt).toLocaleDateString()}</span>
+                        <span>${post.likes} ${pluralize(post.likes, "like")}</span>
+                    </div>
+                </a>
+            `;
             container.appendChild(postElement);
         })
     })
+
+function pluralize(count, word) {
+    return count === 1 ? word : word + "s";
+}
