@@ -4,7 +4,7 @@ fetch("/authors/me")
             window.location.href="profile.html";
         }
         else{
-            document.querySelector(".account-buttos-container").style.display = "";
+            document.querySelector(".account-buttons-container").style.display = "";
             const signup = document.getElementById("signup");
             const login = document.getElementById("login");
 
