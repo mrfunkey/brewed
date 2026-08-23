@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Second Listen
 
 A full-stack blog platform for long-form music and album criticism. Built with a Spring Boot REST API backend and a vanilla HTML/CSS/JS frontend — no frontend framework, no build step for the client side.
@@ -101,3 +102,14 @@ Schema is managed automatically via `spring.jpa.hibernate.ddl-auto=update` — t
 | `signup.html` / `login.html` | Account creation and authentication |
 | `profile.html` | Author's profile picture, alias, and bio |
 | `about.html` | About the site |
+=======
+<div align="left">
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/html.png" alt="HTML" title="HTML"/></code>
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/css.png" alt="CSS" title="CSS"/></code>
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/javascript.png" alt="JavaScript" title="JavaScript"/></code>
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/java.png" alt="Java" title="Java"/></code>
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/spring_boot.png" alt="Spring Boot" title="Spring Boot"/></code>
+</div>
+
+<img width= 50% src="https://github.com/user-attachments/assets/c329fcb9-4962-4af0-bd7f-dc77369392b8" />
+>>>>>>> 15dd7c2379ddaa706d3b387341fa876b3e0ef4c1
