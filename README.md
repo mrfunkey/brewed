@@ -5,8 +5,8 @@
 	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/java.png" alt="Java" title="Java"/></code>
 	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/spring_boot.png" alt="Spring Boot" title="Spring Boot"/></code>
 </div>
-
-<img width= 50% src="https://github.com/user-attachments/assets/c329fcb9-4962-4af0-bd7f-dc77369392b8" />
+<br>
+<img width= 30% src="https://github.com/user-attachments/assets/c329fcb9-4962-4af0-bd7f-dc77369392b8" />
 
 A full-stack blog platform for long-form music and album criticism. Built with a Spring Boot REST API backend and a vanilla HTML/CSS/JS frontend.
 
