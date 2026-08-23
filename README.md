@@ -9,6 +9,7 @@
 <img width= 30% src="https://github.com/user-attachments/assets/c329fcb9-4962-4af0-bd7f-dc77369392b8" />
 
 A full-stack blog platform for long-form music and album criticism. Built with a Spring Boot REST API backend and a vanilla HTML/CSS/JS frontend.
+Live View: soon!
 
 ## About
 
