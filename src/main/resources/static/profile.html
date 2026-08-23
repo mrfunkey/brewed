@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Second Listen | Posts</title>
+  <title>Second Listen | Profile</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-  <script src="js/createpost.js" defer></script>
+  <script src="js/profile.js" defer></script>
 </head>
 <body>
   <div>
@@ -20,23 +19,13 @@
       <a class="nav-button" href="posts.html">Posts</a>
       <a class="nav-button" href="newuserscreen.html">Profile</a>
       <a class="nav-button" href="about.html">About</a>
-
     </div>
-    <div>
-      <h1 class="heading">Create Post</h1>
+    <div class="profile">
+      <h2>Profile</h2>
+      <div class="profile-picture"></div>
+      <h3 class="profile-alias"></h3>
+      <div class="profile-bio"></div>
     </div>
-    <div class="create-post">
-      <h3>Title: </h3>
-      <input type="text" id="title" class="text-box" placeholder="Your post's title here..." required>
-      <h3>Description: </h3>
-      <input type="text" id="description" class="text-box" placeholder="The description for the post..." required>
-      <h3>Content: </h3>
-      <textarea type="text" id="content" class="text-box" placeholder="Write your thoughts here..."></textarea>
-    </div>
-    <div class="create-post">
-      <button id="publish-button">Publish</button>
-    </div>
-
 
   </div>
 </body>

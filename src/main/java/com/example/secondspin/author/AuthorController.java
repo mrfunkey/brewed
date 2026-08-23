@@ -2,9 +2,15 @@ package com.example.secondspin.author;
 
 import com.example.secondspin.post.Post;
 import com.example.secondspin.post.PostService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.context.SecurityContextRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +22,8 @@ public class AuthorController {
     private AuthorService authorService;
     @Autowired
     private PostService postService;
+    @Autowired
+    private SecurityContextRepository securityContextRepository;
 
     @GetMapping()
     public List<Author> getAuthors() {
@@ -38,8 +46,30 @@ public class AuthorController {
         return postService.getAuthorPosts(id);
     }
 
-    @PostMapping
+    @PostMapping("/signup")
     public ResponseEntity<Author> createAuthor(@RequestBody Author author) {
         return ResponseEntity.status(HttpStatus.CREATED).body(authorService.createAuthor(author));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<Author> login(@RequestBody Author author, HttpServletRequest request, HttpServletResponse response) {
+        try{
+            Author loggedInAuthor = authorService.login(author.getEmail(), author.getPassword());
+            securityContextRepository.saveContext(SecurityContextHolder.getContext(), request, response);
+            return ResponseEntity.ok(loggedInAuthor);
+        }
+        catch(Exception e){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+    }
+
+    @GetMapping("/me")
+    public ResponseEntity<Author> me() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth == null ||  !auth.isAuthenticated() || auth instanceof AnonymousAuthenticationToken) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+        Author author = authorService.getAuthorByEmail(auth.getName());
+        return ResponseEntity.ok(author);
     }
 }

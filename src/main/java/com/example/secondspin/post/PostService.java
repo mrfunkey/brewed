@@ -3,6 +3,8 @@ package com.example.secondspin.post;
 import com.example.secondspin.author.Author;
 import com.example.secondspin.author.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -16,7 +18,7 @@ public class PostService {
     private AuthorRepository authorRepository;
 
     public List<Post> getPosts(){
-        return postRepository.findAll();
+        return postRepository.findAllByOrderByCreatedAtDesc();
     }
 
     public List<Post> getRecentPosts(int days) {
@@ -33,13 +35,8 @@ public class PostService {
     }
 
     public Post createPost(Post post) {
-        if (post.getAuthor() == null) {
-            return null;
-        }
-        Author author = authorRepository.findById(post.getAuthor().getId()).orElse(null);
-        if (author == null) {
-            return null;
-        }
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        Author author = authorRepository.findByEmail(auth.getName()).orElse(null);
         post.setAuthor(author);
         return postRepository.save(post);
     }

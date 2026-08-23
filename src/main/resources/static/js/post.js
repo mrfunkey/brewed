@@ -9,7 +9,7 @@ fetch(`/posts/${id}`)
         postElement.classList.add("post-detail-card");
         postElement.innerHTML = `
             <h2 class="post-title">${post.title}</h2>
-            <p class="post-author">${post.author.fullName}</p>
+            <p class="post-author">${post.author.alias}</p>
             <span class="post-content">${post.content}</span>
             <div class="post-meta">
                 <span>${new Date(post.createdAt).toLocaleDateString()}</span>

@@ -12,4 +12,5 @@ import java.util.Optional;
 public interface PostRepository extends JpaRepository<Post, Long> {
     List<Post> findByCreatedAtAfter(LocalDateTime cutoff);
     List<Post> findByAuthorId(Long authorId);
+    List<Post> findAllByOrderByCreatedAtDesc();
 }

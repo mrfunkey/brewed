@@ -1,4 +1,4 @@
-fetch("/dashboard/recent-posts?days=30")
+fetch("/posts")
     .then((res) => res.json())
     .then(data => {
         const container = document.getElementById("post-list");
