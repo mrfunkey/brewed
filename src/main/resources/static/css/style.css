@@ -33,26 +33,39 @@ p {
     transform: translateY(-50%);
 }
 
+.home-feed{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .logo {
     display: block;
-    user-select:none;
-    height: auto;
-    width: 200px;
+    user-select: none;
+    white-space: nowrap;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .nav-bar{
     position: sticky;
-    top: 0;
+    top: 8px;
     z-index: 10;
-    margin-bottom: 0;
-    background: linear-gradient(180deg,rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    margin: 0 24px 12px;
+    background: linear-gradient(to bottom, rgb(0 0 0 / 0.5) 0%, rgb(10 6 5 / 0) 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    outline: rgb(122 118 108 / 0.15) solid 1px;
     justify-content: center;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     user-select:none;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 -10px 16px 20px rgb(0 0 0 / 0.5);
 }
 
 .nav-button {
@@ -60,33 +73,44 @@ p {
     margin-left: 20px;
     margin-right: 20px;
     text-align: center;
-    padding: 14px;
-    font-size: 20px;
+    padding: 8px;
+    font-size: 16px;
     text-decoration: none;
     border-radius: 12px;
+    outline: #fff5e0 solid 1px;
     font-family: "Archivo Black", sans-serif;
     font-weight: 100;
     color: #fff5e0;
-    transition: color 0.05s ease;
+    box-shadow: 0 0 10px 5px rgb(0 0 0 / 0.5);
+    background: linear-gradient(to bottom, #32291c 0%,#0a0605 100%);
+    transition: box-shadow 0.05s ease, outline-color 0.05s ease;
+
 }
 .nav-button:hover {
-    color: #ffe67e;
-
+    box-shadow: 0 0 16px 1px rgb(255 236 197 / 0.5);
+    outline-color: #ffecc5;
 }
 
 .post-heading {
     text-align: center;
+    margin-top: 50px;
+    transition: transform 0.25s ease;
+}
+.post-heading:has(~ .main-content .post-card:first-child:hover) {
+    transform: translateY(-50px);
 }
 
 .post-list {
     display: block;
-    margin: 100px auto;
+    margin: 50px auto;
     text-align: left;
     max-width: 600px;
-    background: radial-gradient(circle,rgba(0, 0, 0, 1) 31%, rgba(26, 21, 14, 1) 100%);
-    outline: rgb(122 118 108 / 0.5) solid 2px;
     padding: 20px;
     border-radius: 12px;
+    background: linear-gradient(to bottom, rgb(0 0 0 / 0.5) 0%, rgb(10 6 5 / 0) 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    outline: rgb(122 118 108 / 0.15) solid 1px;
 }
 
 .post-card {
@@ -96,7 +120,7 @@ p {
     margin-top: -140px;
     padding-top: 6px;
     min-height: 260px;
-    outline: #fff5e0 solid 2px;
+    outline: #fff5e0 solid 1px;
     border-radius: 12px;
     margin-bottom: 10px;
     user-select: none;
@@ -166,11 +190,16 @@ p {
 
 .heading {
     display: block;
-    margin: 0 auto;
     text-align: center;
-    margin-bottom: 10px;
+    margin: 50px 0;
     font-family: "Archivo Black", sans-serif;
 }
+
+.subheading{
+    margin-bottom: 0;
+    text-align: center;
+}
+
 
 .about-content{
     display: block;
@@ -178,9 +207,6 @@ p {
     text-align: center;
 }
 
-.subheading{
-    margin-bottom: 0;
-}
 
 .create-post {
     display: grid;
@@ -233,7 +259,9 @@ p {
 }
 
 .profile-alias {
-    margin-top: 0px;
+    margin-top: 10px;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 26px;
 }
 
 .profile-bio {
