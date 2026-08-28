@@ -9,11 +9,11 @@ fetch("/posts")
                 <a class="post-link" href="post.html?id=${post.id}">
                     <h2 class="post-title">${post.title}</h2>
                     <p class="post-author">${post.author.alias}</p>
-                    <p>${post.description}</p>
                     <div class="post-meta">
                         <span>${new Date(post.createdAt).toLocaleDateString()}</span>
                         <span>${post.likes} ${pluralize(post.likes, "like")}</span>
                     </div>
+                    <p>${post.description}</p>
                 </a>
             `;
             container.appendChild(postElement);

@@ -5,6 +5,7 @@
     <title>Second Listen | Posts</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/posts.js" defer></script>
+    <script src="js/navbar.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -12,18 +13,10 @@
 </head>
 <body>
     <div>
-        <div>
-            <img class="logo" src="img/logo.png" alt="Second Listen">
-        </div>
-        <div class="nav-bar">
-            <a class="nav-button" href="index.html">Home</a>
-            <a class="nav-button" href="posts.html">Posts</a>
-            <a class="nav-button" href="newuserscreen.html">Profile</a>
-            <a class="nav-button" href="about.html">About</a>
-        </div>
-        <div>
+        <div id="nav-bar" class="nav-bar"></div>
+        <div class="post-heading">
             <h1 class="heading">Posts</h1>
-            <a href="createpost.html">Create Post</a>
+            <h3>Hover over a post to view it's description!</h3>
         </div>
         <div class="main-content">
             <div id="post-list" class="post-list">
