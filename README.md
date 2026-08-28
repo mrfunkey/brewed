@@ -7,7 +7,7 @@
 	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/spring_boot.png" alt="Spring Boot" title="Spring Boot"/></code>
 </div>
 <br>
-<img width="15%" alt="logo" src="https://github.com/user-attachments/assets/3f236fb7-71a0-457f-aa91-6ca0a8f9dd25" />
+<img width="25%" alt="logo" src="https://github.com/user-attachments/assets/3f236fb7-71a0-457f-aa91-6ca0a8f9dd25" />
 
 
 A full-stack blog platform for long-form music and album criticism. Built with a Spring Boot REST API backend and a vanilla HTML/CSS/JS frontend.
