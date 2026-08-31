@@ -14,7 +14,14 @@ public class PostController {
     private PostService postService;
 
     @GetMapping()
-    public List<Post> getPosts() {
+    public List<Post> getPosts(@RequestParam(required = false) String sort,
+                               @RequestParam(required = false) String days) {
+        if ("likes".equals(sort)) {
+            return postService.getTopLikedPosts();
+        }
+        if (days != null){
+            return postService.getRecentPosts(Integer.parseInt(days));
+        }
         return postService.getPosts();
     }
 

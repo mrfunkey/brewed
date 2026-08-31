@@ -26,6 +26,10 @@ public class PostService {
         return postRepository.findByCreatedAtAfter(cutoff);
     }
 
+    public List<Post> getTopLikedPosts() {
+        return postRepository.findTop10ByOrderByLikesDesc();
+    }
+
     public List<Post> getAuthorPosts(Long id) {
         return postRepository.findByAuthorId(id);
     }

@@ -49,6 +49,19 @@ p {
     background-clip: text;
 }
 
+#logo-large{
+    font-size: 100px;
+    text-align: center;
+    margin-top:100px;
+}
+
+#signup, #login {
+    text-align: center;
+    font-size:25px;
+    padding:10px;
+    margin-bottom: 20px;
+}
+
 .nav-bar{
     position: sticky;
     top: 8px;
@@ -58,6 +71,7 @@ p {
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     outline: rgb(122 118 108 / 0.15) solid 1px;
+    box-shadow: 0 -10px 16px 20px rgb(0 0 0 / 0.5);
     justify-content: center;
     display: flex;
     flex-wrap: nowrap;
@@ -65,7 +79,6 @@ p {
     user-select:none;
     padding: 12px;
     border-radius: 12px;
-    box-shadow: 0 -10px 16px 20px rgb(0 0 0 / 0.5);
 }
 
 .nav-button {
@@ -91,6 +104,11 @@ p {
     outline-color: #ffecc5;
 }
 
+.login-link{
+    text-decoration: none;
+    text-shadow: 0 0 8px rgb(255 236 197 / 0.5), 0 0 12px rgb(255 236 197 / 1);
+}
+
 .post-heading {
     text-align: center;
     margin-top: 50px;
@@ -113,6 +131,19 @@ p {
     outline: rgb(122 118 108 / 0.15) solid 1px;
 }
 
+#most-liked-posts .post-card:first-child .post-likes {
+    color: #ffecc5;
+    text-shadow: 0 0 16px rgb(255 236 197 / 1), 0 0 12px rgb(255 236 197 / 1);
+}
+#most-liked-posts .post-card:nth-child(2) .post-likes {
+    color: #ffecc5;
+    text-shadow: 0 0 4px rgb(255 236 197 / 0.8), 0 0 12px rgb(255 236 197 / 0.5);
+}
+#most-liked-posts .post-card:nth-child(3) .post-likes {
+    color: #ffecc5;
+    text-shadow: 0 0 1px rgb(255 236 197 / 0.8), 0 0 12px rgb(255 236 197 / 0.5);
+}
+
 .post-card {
     position: relative;
     z-index: 0;
@@ -120,10 +151,10 @@ p {
     margin-top: -140px;
     padding-top: 6px;
     min-height: 260px;
-    outline: #fff5e0 solid 1px;
-    border-radius: 12px;
     margin-bottom: 10px;
     user-select: none;
+    outline: #fff5e0 solid 1px;
+    border-radius: 12px;
     background: linear-gradient(to bottom, #32291c 0%,#0a0605 100%);
     box-shadow: 0 -10px 16px 0 rgb(0 0 0 / 0.5);
     transition: transform 0.25s ease,
@@ -219,30 +250,36 @@ p {
 }
 
 .text-box{
-    margin: 0 auto;
     width: 100%;
     min-height:40px;
     font-size: 16px;
-    font-family: 'Alan Sans', sans-serif;
+    color: #fff5e0;
     border: 2px solid #081210;
-    border-radius: 10px;
     padding-left: 10px;
-    margin-left: 10px;
+    margin: 0 auto 0 10px;
     resize: vertical;
+    outline: #fff5e0 solid 1px;
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #32291c 0%,#0a0605 100%);
+    box-shadow: 0 -10px 16px 0 rgb(0 0 0 / 0.5);
+    transition: outline-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
 }
 .text-box:focus{
-    outline: none;
+    outline-color: #ffecc5;
+    box-shadow: 0 0 16px 0 rgb(255 236 197 / 0.5);
+    color: #ffecc5;
+
 }
 
 .account-buttons-container{
-    display: block;
-    margin: 0 auto;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.account-button{
-    padding:20px;
-    font-size:20px;
+.login-link {
+    text-decoration: none;
+    color: inherit;
 }
 
 .profile{

@@ -13,3 +13,14 @@ fetch("/authors/me")
         const bioContainer = document.querySelector(".profile-bio");
         bioContainer.textContent = author.bio;
     })
+
+document.getElementById("logout-button").addEventListener("click", (e) => {
+    e.preventDefault();
+    fetch("/authors/logout", { method: "POST" })
+        .then(() => {
+            try {
+                localStorage.setItem("loggedIn", "false");
+            } catch (e) {}
+            window.location.href = "index.html";
+        });
+});

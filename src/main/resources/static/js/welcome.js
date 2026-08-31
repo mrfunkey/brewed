@@ -1,6 +1,14 @@
 fetch("/authors/me")
-    .then(res => res.json())
+    .then(res => res.ok ? res.json() : null)
     .then(author => {
-        const container = document.querySelector(".name")
-        container.textContent = author.alias + "!";
+        const heading = document.querySelector(".heading");
+        if (author) {
+            const container = document.querySelector(".name");
+            container.textContent = author.alias + "!";
+        } else {
+            heading.textContent = "welcome!";
+        }
+    })
+    .catch(() => {
+        document.querySelector(".heading").textContent = "welcome!";
     })

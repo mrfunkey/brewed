@@ -12,7 +12,7 @@ function loadPosts(id, url){
                     <p class="post-author">${post.author.alias}</p>
                     <div class="post-meta">
                         <span>${new Date(post.createdAt).toLocaleDateString()}</span>
-                        <span>${post.likes} ${pluralize(post.likes, "like")}</span>
+                        <span class="post-likes">${post.likes} ${pluralize(post.likes, "like")}</span>
                     </div>
                     <p>${post.description}</p>
                 </a>
@@ -21,6 +21,7 @@ function loadPosts(id, url){
             })
         })
 }
+
 
 
 function pluralize(count, word) {
@@ -35,5 +36,5 @@ if (document.getElementById("most-liked-posts")) {
 }
 //loadPosts("friend-posts", "/posts?sort=likes");
 if (document.getElementById("recent-posts")) {
-    loadPosts("recent-posts", "/dashboard/recent-posts?days=7");
+    loadPosts("recent-posts", "/posts?days=7");
 }

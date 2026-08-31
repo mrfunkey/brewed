@@ -10,11 +10,11 @@ fetch(`/posts/${id}`)
         postElement.innerHTML = `
             <h2 class="post-title">${post.title}</h2>
             <p class="post-author">${post.author.alias}</p>
-            <span class="post-content">${post.content}</span>
             <div class="post-meta">
                 <span>${new Date(post.createdAt).toLocaleDateString()}</span>
                 <span>${post.likes} ${pluralize(post.likes, "like")}</span>
             </div>
+            <span class="post-content">${post.content}</span>
             
         `;
         container.appendChild(postElement);
