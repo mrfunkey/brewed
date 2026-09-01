@@ -15,7 +15,7 @@ document.getElementById("nav-bar").innerHTML = `
     <div class="profile-wrap">
         <a class="nav-button" href="createpost.html">brew</a>
         <a class="nav-button" id="auth-link" 
-            href="${cachedLoggedIn ? "profile.html" : "newuserscreen.html"}">
+            href="${cachedLoggedIn ? "profile.html" : "signup.html"}">
             ${cachedLoggedIn ? "Profile" : "sign up"}
         </a>
     </div>
@@ -24,7 +24,7 @@ document.getElementById("nav-bar").innerHTML = `
 function setAuthLink(loggedIn) {
     const authLink = document.getElementById('auth-link');
     authLink.textContent = loggedIn ? "profile" : "sign up";
-    authLink.href = loggedIn ? "profile.html" : "newuserscreen.html"
+    authLink.href = loggedIn ? "profile.html" : "signup.html"
 }
 
 fetch("/authors/me")

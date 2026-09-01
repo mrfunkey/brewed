@@ -24,3 +24,17 @@ document.getElementById("logout-button").addEventListener("click", (e) => {
             window.location.href = "index.html";
         });
 });
+
+document.getElementById("delete-button").addEventListener("click", (e) => {
+    e.preventDefault();
+    fetch("/authors", {method: "DELETE"})
+        .then((res) => {
+            try{
+                localStorage.setItem("loggedIn", "false");
+            } catch(e) {}
+            window.location.href = "index.html";
+        })
+            .catch((err) => {
+                console.log(err);
+            })
+        })

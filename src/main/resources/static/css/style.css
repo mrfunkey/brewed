@@ -60,6 +60,7 @@ p {
     font-size:25px;
     padding:10px;
     margin-bottom: 20px;
+    margin-top:20px;
 }
 
 .nav-bar{
@@ -248,11 +249,16 @@ p {
 .create-post {
     display: grid;
     grid-template-columns: 0.2fr 1fr;
+    column-gap: 10px;
     justify-content: center;
     max-width: 500px;
     margin: 0 auto;
     grid-template-rows: auto;
     align-items: center;
+}
+
+#signup-container, #login-container {
+    width: 400px;
 }
 
 .text-box{
@@ -262,7 +268,7 @@ p {
     color: #fff5e0;
     border: 2px solid #081210;
     padding-left: 10px;
-    margin: 0 auto 0 10px;
+    margin: 0;
     resize: vertical;
     outline: #fff5e0 solid 1px;
     border-radius: 12px;
@@ -308,7 +314,7 @@ p {
 }
 
 .profile-bio {
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .welcome-header {

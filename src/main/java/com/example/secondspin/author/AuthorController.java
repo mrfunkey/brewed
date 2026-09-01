@@ -52,6 +52,22 @@ public class AuthorController {
         return ResponseEntity.status(HttpStatus.CREATED).body(authorService.createAuthor(author));
     }
 
+    @DeleteMapping()
+    public ResponseEntity<Void> deleteAuthor(HttpServletRequest request) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || !authentication.isAuthenticated() ||  authentication instanceof AnonymousAuthenticationToken) {
+            return  ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+        Author author = authorService.getAuthorByEmail(authentication.getName());
+        authorService.deleteAuthor(author);
+        SecurityContextHolder.clearContext();
+        HttpSession session = request.getSession(false);
+        if (session != null){
+            session.invalidate();
+        }
+        return ResponseEntity.noContent().build();
+    }
+
     @PostMapping("/login")
     public ResponseEntity<Author> login(@RequestBody Author author, HttpServletRequest request, HttpServletResponse response) {
         try{
@@ -83,4 +99,6 @@ public class AuthorController {
         }
         return ResponseEntity.ok().build();
     }
+
+
 }

@@ -37,6 +37,10 @@ public class AuthorService {
         return authorRepository.save(author);
     }
 
+    public void deleteAuthor(Author author) {
+        authorRepository.delete(author);
+    }
+
     public Author login(String email, String password) {
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(email, password);
         SecurityContextHolder.getContext().setAuthentication(authenticationManager.authenticate(token));
@@ -44,5 +48,4 @@ public class AuthorService {
         Author author = authorRepository.findByEmail(token.getName()).get();
         return author;
     }
-
 }
