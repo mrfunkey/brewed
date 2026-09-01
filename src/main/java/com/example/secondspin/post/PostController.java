@@ -16,6 +16,9 @@ public class PostController {
     @GetMapping()
     public List<Post> getPosts(@RequestParam(required = false) String sort,
                                @RequestParam(required = false) String days) {
+        if ("likes".equals(sort) && days != null) {
+            return postService.getTopLikedByWeek(Integer.parseInt(days));
+        }
         if ("likes".equals(sort)) {
             return postService.getTopLikedPosts();
         }

@@ -30,6 +30,11 @@ public class PostService {
         return postRepository.findTop10ByOrderByLikesDesc();
     }
 
+    public List<Post> getTopLikedByWeek(int days) {
+        LocalDateTime cutoff = LocalDateTime.now().minusDays(days);
+        return postRepository.findTop10ByCreatedAtAfterOrderByLikesDesc(cutoff);
+    }
+
     public List<Post> getAuthorPosts(Long id) {
         return postRepository.findByAuthorId(id);
     }

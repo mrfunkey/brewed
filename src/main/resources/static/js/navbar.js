@@ -11,9 +11,9 @@ document.getElementById("nav-bar").innerHTML = `
         <span class="logo">brewed</span>
     </div>
     <a class="nav-button" href="index.html">home</a>
-    <a class="nav-button" href="posts.html">posts</a>
+    <a class="nav-button" href="posts.html">feed</a>
     <div class="profile-wrap">
-        <a class="nav-button" href="createpost.html">brew post</a>
+        <a class="nav-button" href="createpost.html">brew</a>
         <a class="nav-button" id="auth-link" 
             href="${cachedLoggedIn ? "profile.html" : "newuserscreen.html"}">
             ${cachedLoggedIn ? "Profile" : "sign up"}

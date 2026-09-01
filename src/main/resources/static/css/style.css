@@ -35,7 +35,7 @@ p {
 
 .home-feed{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 0.5fr 1fr;
 }
 
 .logo {
@@ -103,6 +103,9 @@ p {
     box-shadow: 0 0 16px 1px rgb(255 236 197 / 0.5);
     outline-color: #ffecc5;
 }
+.nav-button:active {
+    box-shadow: 0 0 16px 10px rgb(255 236 197 / 0.5);
+}
 
 .login-link{
     text-decoration: none;
@@ -131,17 +134,17 @@ p {
     outline: rgb(122 118 108 / 0.15) solid 1px;
 }
 
-#most-liked-posts .post-card:first-child .post-likes {
+#most-liked-by-week .post-card:first-child .post-likes {
     color: #ffecc5;
-    text-shadow: 0 0 16px rgb(255 236 197 / 1), 0 0 12px rgb(255 236 197 / 1);
+    text-shadow: 0 0 16px rgb(255 245 224), 0 0 12px rgb(255 245 224);
 }
-#most-liked-posts .post-card:nth-child(2) .post-likes {
+#most-liked-by-week .post-card:nth-child(2) .post-likes {
     color: #ffecc5;
-    text-shadow: 0 0 4px rgb(255 236 197 / 0.8), 0 0 12px rgb(255 236 197 / 0.5);
+    text-shadow: 0 0 4px rgb(255 245 224), 0 0 12px rgb(255 245 224);
 }
-#most-liked-posts .post-card:nth-child(3) .post-likes {
+#most-liked-by-week .post-card:nth-child(3) .post-likes {
     color: #ffecc5;
-    text-shadow: 0 0 1px rgb(255 236 197 / 0.8), 0 0 12px rgb(255 236 197 / 0.5);
+    text-shadow: 0 0 1px rgb(255 245 224), 0 0 12px rgb(255 245 224);
 }
 
 .post-card {
@@ -169,9 +172,12 @@ p {
     outline-color: #ffecc5;
     box-shadow: 0 -8px 16px 0 rgb(255 236 197 / 0.5);
 }
+.post-card:active {
+    box-shadow: 0 0 16px 10px rgb(255 236 197 / 0.5);
+}
 
 .post-detail-card {
-    outline: #fff5e0 solid 2px;
+    outline: #fff5e0 solid 1px;
     border-radius: 12px;
     background: linear-gradient(to bottom, #32291c 0%,#0a0605 100%);
     user-select: none;
@@ -222,7 +228,7 @@ p {
 .heading {
     display: block;
     text-align: center;
-    margin: 50px 0;
+    margin: 20px 0;
     font-family: "Archivo Black", sans-serif;
 }
 

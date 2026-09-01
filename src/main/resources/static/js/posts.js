@@ -34,7 +34,11 @@ if (document.getElementById("post-list")) {
 if (document.getElementById("most-liked-posts")) {
     loadPosts("most-liked-posts", "/posts?sort=likes");
 }
-//loadPosts("friend-posts", "/posts?sort=likes");
+
+if (document.getElementById("most-liked-by-week")) {
+    loadPosts("most-liked-by-week", "/posts?sort=likes&days=7");
+}
+
 if (document.getElementById("recent-posts")) {
     loadPosts("recent-posts", "/posts?days=7");
 }

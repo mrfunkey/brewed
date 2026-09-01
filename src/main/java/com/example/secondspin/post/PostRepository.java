@@ -12,4 +12,5 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     List<Post> findByAuthorId(Long authorId);
     List<Post> findAllByOrderByCreatedAtDesc();
     List<Post> findTop10ByOrderByLikesDesc();
+    List<Post> findTop10ByCreatedAtAfterOrderByLikesDesc(LocalDateTime cutoff);
 }
