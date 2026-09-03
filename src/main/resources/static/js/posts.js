@@ -28,17 +28,29 @@ function pluralize(count, word) {
     return count === 1 ? word : word + "s";
 }
 
-if (document.getElementById("post-list")) {
-    loadPosts("post-list", "/posts");
-}
-if (document.getElementById("most-liked-posts")) {
-    loadPosts("most-liked-posts", "/posts?sort=likes");
-}
+const containerIds = ["post-list", "most-liked-posts", "most-liked-by-week", "recent-posts", "my-posts"];
+const activeId = containerIds.find(id => document.getElementById(id));
 
-if (document.getElementById("most-liked-by-week")) {
-    loadPosts("most-liked-by-week", "/posts?sort=likes&days=7");
-}
-
-if (document.getElementById("recent-posts")) {
-    loadPosts("recent-posts", "/posts?days=7");
+switch (activeId) {
+    case "post-list":
+        loadPosts("post-list", "/posts");
+        break;
+    case "most-liked-posts":
+        loadPosts("most-liked-posts", "/posts?sort=likes");
+        break;
+    case "most-liked-by-week":
+        loadPosts("most-liked-by-week", "/posts?sort=likes&days=7");
+        break;
+    case "recent-posts":
+        loadPosts("recent-posts", "/posts?days=7");
+        break;
+    case "my-posts":
+        fetch("/authors/me")
+            .then(res => {
+                if (!res.ok) {
+                    return;
+                }
+                res.json().then(author => loadPosts("my-posts", `/authors/${author.id}/posts`));
+            });
+        break;
 }

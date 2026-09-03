@@ -36,7 +36,7 @@ public class PostService {
     }
 
     public List<Post> getAuthorPosts(Long id) {
-        return postRepository.findByAuthorId(id);
+        return postRepository.findByAuthorIdOrderByCreatedAtDesc(id);
     }
 
     public Post getPostById(long id) {
@@ -50,4 +50,7 @@ public class PostService {
         return postRepository.save(post);
     }
 
+    public void deletePost(Long id) {
+        postRepository.deletePostById(id);
+    }
 }
