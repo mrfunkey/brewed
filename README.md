@@ -15,10 +15,10 @@ Live View: soon!
 
 ## Features
 
-- **Account system** — sign up and log in with session-based authentication (Spring Security, BCrypt-hashed passwords, no plaintext credentials ever stored or returned by the API)
+- **Account system** — sign up and log in with session-based authentication (Spring Security, BCrypt-hashed passwords)
 - **Posts** — create, browse, and read individual album reviews, each with a title, description, full write-up, like/dislike counts, and author byline
-- **Author profiles** — alias, bio, and profile picture, editable per account
-- **Stacked card UI** — the posts feed renders as an overlapping, hover-to-reveal stack rather than a flat list, leaning into the site's "crate-digging" identity
+- **Author profiles** - alias, bio, and profile picture, editable per account
+- **Stacked card UI** — the posts feed renders as an overlapping, hover-to-reveal stack rather than a flat list.
 - **Recent posts feed** — the homepage surfaces posts from the last 30 days separately from the full archive
 
 ## Tech Stack
@@ -26,12 +26,12 @@ Live View: soon!
 **Backend**
 - Java 21
 - Spring Boot 4.1
-- Spring Security (session-based auth, custom `UserDetailsService`)
+- Spring Security 
 - Spring Data JPA / Hibernate
 - PostgreSQL
 
 **Frontend**
-- Plain HTML, CSS, and vanilla JavaScript (`fetch`-based calls to the REST API, no framework)
+- Plain HTML, CSS, and vanilla JavaScript
 
 **Build**
 - Maven
@@ -39,7 +39,7 @@ Live View: soon!
 ## Project Structure
 
 ```
-src/main/java/com/example/secondspin/
+src/main/java/com/example/brewed/
 ├── author/          # Author entity, repository, service, controller, auth (UserDetailsService)
 ├── post/            # Post entity, repository, service, controller
 ├── dashboard/        # Recent-posts feed endpoint
