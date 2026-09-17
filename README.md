@@ -10,12 +10,8 @@
 <img width="25%" alt="logo" src="https://github.com/user-attachments/assets/3f236fb7-71a0-457f-aa91-6ca0a8f9dd25" />
 
 
-A full-stack blog platform for long-form music and album criticism. Built with a Spring Boot REST API backend and a vanilla HTML/CSS/JS frontend.
+A full-stack blog platform for freeform content and criticism. Built with a Spring Boot REST API backend and a vanilla HTML/CSS/JS frontend.
 Live View: soon!
-
-## About
-
-Second Listen is a place for close, repeated-listen album reviews rather than quick takes; the kind of writing that treats a record as something worth revisiting rather than reacting to once. Authors sign up, log in, and publish reviews, while readers browse a "crate" of posts styled after flipping through a stack of records.
 
 ## Features
 
